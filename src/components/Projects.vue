@@ -1,0 +1,205 @@
+<template>
+  <div id="projects">
+    <Nav></Nav>
+    <div class="container-fluid   mt-3">
+      <div class="row shadow-lg p-3 mb-5 bg-dark rounded">
+        <div
+          class=" col-md-4
+          border
+            text-center"
+          v-for="project in projects"
+          :key="projects.Id"
+        >
+          <a target="_blank" rel="noopener noreferrer" :href="project.url">
+            <div class="container-fluid">
+              <div class="row mx-auto border border-dark">
+                <img
+                  class="thumbnail align-middle col-md-12 mt-3"
+                  v-bind:src="project.image"
+                />
+              </div>
+            </div>
+            <h1 class="text-primary mt-5 mb-5">{{ project.project }}</h1>
+          </a>
+          <div class="row">
+            <div class="container">
+              <div class="jumbotron">
+                <p class="text-justify p-1">{{ project.Description }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row text-center">
+              <button @click="toggleView" class="btn btn-lg btn btn-info">
+                View Technologies
+              </button>
+            </div>
+          </div>
+          <div v-show="inView" class="container bg-secondary mt-4">
+            <h3 class="text-info">Tech Stack</h3>
+            <ul>
+              <li v-for="tech in project.Technologies">
+                {{ tech }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import Nav from "./Nav.vue";
+export default {
+  name: "app",
+  data() {
+    return {
+      inView: false,
+
+      projects: [
+        {
+          Id: 1,
+          project: "React Blogg",
+          Technologies: [
+            "JavaScript",
+            "React",
+            "HTML5",
+            "Materialized CSS",
+            "Redux",
+            "Firebase",
+            "Firestore"
+          ],
+          image: require("../../public/Blogg.png"),
+          url: "https://my-react-app-d3931.firebaseapp.com/",
+          Description:
+            "Blog site where user can create an account, login, logout, create and post blog, read posts."
+        },
+        {
+          Id: 2,
+          project: "Malmo Rugby Club",
+          Technologies: [
+            "JavaScript",
+            "Handlebars",
+            "HTML5",
+            "CSS3",
+            "SQL",
+            "Node.Js",
+            "Express",
+            "Postgres"
+          ],
+          image: require("../../public/Malmö Rugby Club.jpg"),
+          url: "https://malmo-rugby-club.herokuapp.com/",
+          Description:
+            "Web page for Malmö rugby team built in a week as a final project, consisting of a registration page, login page, homepage, player profile page, player statistics page, shopping page & videos."
+        },
+        {
+          Id: 3,
+          project: "MyMusic",
+          Technologies: [
+            "JavaScript",
+            "JQuery",
+            "HTML5",
+            "CSS3",
+            "Boostrap 4",
+            "Sportify API",
+            "Ajax"
+          ],
+          image: require("../../public/Mymusic.png"),
+          Description: "Music search application using Sportify API",
+          url: "https://mymusic-32884.firebaseapp.com/"
+        },
+        {
+          Id: 4,
+          project: "Petition",
+          Technologies: ["JavaScript", "React", "HTML5", "CSS3", "Redux"],
+          image: require("../../public/petition.png"),
+          url: "https://food-waistage-pettiion.herokuapp.com/register",
+          Description:
+            "Website dedicated to food wastage reduction , users can register, create profile/edit profile, sign up using a canvas, view list of all signers information by city & proceed to thank you page."
+        },
+        {
+          Id: 5,
+          project: "Connect4",
+          Technologies: ["JavaScript", "HTML5", "CSS3", "Key frame animations"],
+          image: require("../../public/Connect4.png"),
+          url: "https://connect4-2213a.firebaseapp.com",
+          Description:
+            "A two player Connect4 game, players compete to win by attempting to be the first to set four balls after each other, either horizontally, vertically or diagonally creating a win situation."
+        }
+      ]
+    };
+  },
+  components: {
+    Nav
+  },
+  methods: {
+    toggleView() {
+      if (this.inView == true) {
+        this.inView = false;
+      } else {
+        this.inView = true;
+      }
+    }
+  }
+};
+</script>
+
+<style scoped>
+#projects {
+  height: 100%;
+  background: #e3f2fd;
+}
+li {
+  list-style: none;
+}
+img {
+  width: 100%;
+  height: 200px;
+}
+img {
+  -webkit-animation: fade-in-bck 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) 2s
+    both;
+  animation: fade-in-bck 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) 2s both;
+}
+
+.jumbotron {
+  height: 248px;
+}
+
+/* img keyframes */
+/* ----------------------------------------------
+ * Generated by Animista on 2019-7-12 20:26:44
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation fade-in-bck
+ * ----------------------------------------
+ */
+@-webkit-keyframes fade-in-bck {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-bck {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+</style>
