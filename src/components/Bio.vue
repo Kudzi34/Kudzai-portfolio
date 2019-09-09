@@ -8,7 +8,7 @@
           <div class="mx-auto">
             <img
               class="rounded-circle border-primary rounded-lg img-thumbnail mt-5 mb-3"
-              src="https://media.licdn.com/dms/image/C4D03AQH1GOpja_Apkg/profile-displayphoto-shrink_200_200/0?e=1567641600&v=beta&t=0Enwf_InzjoLYC7kVcOof3Sv1shpA2P3YSOvs1r61zA"
+              src="../../public/kudzi- pic.jpeg"
               alt=""
             />
           </div>
