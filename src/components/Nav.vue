@@ -1,6 +1,6 @@
 <template>
   <div id="nav">
-    <nav class="navbar navbar-expand-md navbar-dark bg-primary ">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
       <a class="navbar-brand" href="/">KDN</a>
       <button
         class="navbar-toggler"
@@ -23,9 +23,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/projects">PROJECTS</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/technologies">TECHNOLOGIES</a>
-          </li>
+
           <li class="nav-item">
             <a class="nav-link" href="/cv">CV</a>
           </li>
@@ -60,7 +58,4 @@ export default {
 };
 </script>
 
-<style>
-#nav {
-}
-</style>
+<style scoped></style>

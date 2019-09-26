@@ -1,14 +1,13 @@
 <template>
   <div id="tech-div">
-    <Nav></Nav>
-    <div class="container">
+    <div class="container fluid">
       <div>
         <div class="row">
           <div
             v-for="tech in technologies"
-            class="col-md-4 text-center  mt-3 mb-5"
+            class=" col-xs-12 col-md-2  text-center   mr-4 mt-3 mb-4"
           >
-            <h3 class="mb-2">{{ tech.name }}</h3>
+            <h3 class="mb-2 mr-5">{{ tech.name }}</h3>
             <img class="thumbnail" :src="tech.image" alt="" />
           </div>
         </div>
@@ -61,7 +60,7 @@ export default {
           image: require("../../public/node.png")
         },
         {
-          name: "Node Package Manager",
+          name: "NPM",
           image: require("../../public/npm.png")
         },
 
@@ -74,7 +73,7 @@ export default {
           image: require("../../public/SQL.png")
         },
         {
-          name: "GIT Version Control",
+          name: "GIT",
           image: require("../../public/github.png")
         }
       ]
@@ -89,9 +88,10 @@ export default {
 <style scoped>
 #tech-div {
   background: silver;
+  height: 650px;
 }
 img {
-  height: 150px;
-  width: 160px;
+  height: 110px;
+  width: 120px;
 }
 </style>

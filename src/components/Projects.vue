@@ -1,8 +1,8 @@
 <template>
   <div id="projects">
     <Nav></Nav>
-    <div class="container-fluid   mt-3">
-      <div class="row shadow-lg p-3 mb-5 bg-dark rounded">
+    <div class="container-fluid">
+      <div class="row shadow-lg p-3  mb-5 bg-dark rounded">
         <div
           class=" col-md-4
           border
